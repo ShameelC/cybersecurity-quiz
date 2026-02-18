@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cybersecurity Awareness Quiz</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.question{display:none;}
+.question.active{display:block;}
+
+.answer{
+  display:block;
+  width:100%;
+  margin:8px 0;
+  padding:12px;
+  background:#334155;
+  border:none;
+  border-radius:8px;
+  color:white;
+  cursor:pointer;
+}
+.answer:hover{background:#22c55e;}
+.answer.selected{background:#16a34a;}
+
+.nav-btn{
+  margin-top:15px;
+  padding:10px 16px;
+  background:#22c55e;
+  border:none;
+  border-radius:6px;
+  color:white;
+  cursor:pointer;
+}
+
+.progress{margin:10px 0;font-weight:bold;}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Cybersecurity Awareness Quiz</h1>
+
+<input id="name" placeholder="Enter Name">
+<input id="designation" placeholder="Enter Designation">
+
+<div class="progress" id="progress">Question 1 / 15</div>
+
+<!-- QUESTIONS -->
+
+<div class="question active">
+<h3>1️⃣ An employee receives a genuine email from a known vendor.
+The email account was compromised and contains a malicious link.
+What type of attack is this?
+<br>Attack type?</h3>
+<button class="answer" data-q="q1" data-value="Spam">Spam</button>
+<button class="answer" data-q="q1" data-value="Generic phishing">Generic phishing</button>
+<button class="answer" data-q="q1" data-value="Spear phishing">Spear phishing via compromised account</button>
+<button class="answer" data-q="q1" data-value="Internal IT issue">Internal IT issue</button>
+</div>
+
+<div class="question">
+<h3>2️⃣ If there is a hacker on the internet (threat),
+but your system is fully patched and secured (no vulnerability),
+what is the risk level?
+</h3>
+<button class="answer" data-q="q2" data-value="High">High</button>
+<button class="answer" data-q="q2" data-value="Medium">Medium</button>
+<button class="answer" data-q="q2" data-value="Low">Low / Minimal</button>
+<button class="answer" data-q="q2" data-value="Always high">Always high</button>
+</div>
+
+<div class="question">
+<h3>3️⃣ A phishing attack compromises one employee account.
+What is the biggest potential impact?
+</h3>
+<button class="answer" data-q="q3" data-value="Email">Email loss</button>
+<button class="answer" data-q="q3" data-value="Fraud">Financial fraud</button>
+<button class="answer" data-q="q3" data-value="Breach">Data breach</button>
+<button class="answer" data-q="q3" data-value="Reputation">Reputational damage</button>
+</div>
+
+<div class="question">
+<h3>4️⃣ Who is responsible for cybersecurity?</h3>
+<button class="answer" data-q="q4" data-value="IT">IT Team</button>
+<button class="answer" data-q="q4" data-value="Management">Management</button>
+<button class="answer" data-q="q4" data-value="Security">Security Team</button>
+<button class="answer" data-q="q4" data-value="Everyone">Everyone</button>
+</div>
+
+<div class="question">
+<h3>5️⃣ Hackers target first?</h3>
+<button class="answer" data-q="q5" data-value="Firewall">Firewall</button>
+<button class="answer" data-q="q5" data-value="Employee">Random Employee</button>
+<button class="answer" data-q="q5" data-value="Server">Server Room</button>
+<button class="answer" data-q="q5" data-value="CEO">CEO Laptop</button>
+</div>
+
+<div class="question">
+<h3>6️⃣ You get an email: “URGENT! Salary Revision – Click Now!” What should you do?</h3>
+<button class="answer" data-q="q6" data-value="Click">Click immediately</button>
+<button class="answer" data-q="q6" data-value="Share">Share</button>
+<button class="answer" data-q="q6" data-value="Verify">Verify sender</button>
+<button class="answer" data-q="q6" data-value="Panic">Panic</button>
+</div>
+
+<div class="question">
+<h3>7️⃣You receive an email from “HR” saying:
+‘Send your OTP immediately for salary increment.’
+What do you do?</h3>
+<button class="answer" data-q="q7" data-value="Send">Send OTP</button>
+<button class="answer" data-q="q7" data-value="Call">Call HR</button>
+<button class="answer" data-q="q7" data-value="Ignore">Ignore</button>
+<button class="answer" data-q="q7" data-value="Double">Ask double increment</button>
+</div>
+
+<div class="question">
+<h3>8️⃣ Why are software updates important?</h3>
+<button class="answer" data-q="q8" data-value="Emoji">Emojis</button>
+<button class="answer" data-q="q8" data-value="Patch">Security patches</button>
+<button class="answer" data-q="q8" data-value="Color">Color change</button>
+<button class="answer" data-q="q8" data-value="Waste">Waste of time</button>
+</div>
+
+<div class="question">
+<h3>9️⃣ Computer unlocked is like?</h3>
+<button class="answer" data-q="q9" data-value="House">Locking house</button>
+<button class="answer" data-q="q9" data-value="Car">Car with keys inside</button>
+<button class="answer" data-q="q9" data-value="AV">Antivirus</button>
+<button class="answer" data-q="q9" data-value="Nothing">Nothing serious</button>
+</div>
+
+<div class="question">
+<h3>🔟 Same password everywhere?</h3>
+<button class="answer" data-q="q10" data-value="Smart">Smart</button>
+<button class="answer" data-q="q10" data-value="Time">Time saving</button>
+<button class="answer" data-q="q10" data-value="Risk">High risk</button>
+<button class="answer" data-q="q10" data-value="Recommended">Recommended</button>
+</div>
+
+<div class="question">
+<h3>1️⃣1️⃣ Public WiFi without VPN?</h3>
+<button class="answer" data-q="q11" data-value="Safe">Safe</button>
+<button class="answer" data-q="q11" data-value="Fast">Fast</button>
+<button class="answer" data-q="q11" data-value="Risky">Risky</button>
+<button class="answer" data-q="q11" data-value="Free">Free security</button>
+</div>
+
+<div class="question">
+<h3>1️⃣2️⃣ An unknown USB found in parking lot. You?</h3>
+<button class="answer" data-q="q12" data-value="Plug">Plug in</button>
+<button class="answer" data-q="q12" data-value="IT">Give to IT</button>
+<button class="answer" data-q="q12" data-value="Home">Take home</button>
+<button class="answer" data-q="q12" data-value="Check">Just check</button>
+</div>
+
+<div class="question">
+<h3>1️⃣3️⃣What is the biggest phishing red flag?</h3>
+<button class="answer" data-q="q13" data-value="Urgency">Urgency</button>
+<button class="answer" data-q="q13" data-value="Sender">Unknown sender</button>
+<button class="answer" data-q="q13" data-value="Link">Suspicious link</button>
+<button class="answer" data-q="q13" data-value="All">All of the above</button>
+</div>
+
+<div class="question">
+<h3>1️⃣4️⃣ Multi-Factor Authentication (MFA) is?</h3>
+<button class="answer" data-q="q14" data-value="Optional">Optional</button>
+<button class="answer" data-q="q14" data-value="Layer">Extra security layer</button>
+<button class="answer" data-q="q14" data-value="Slow">Slow</button>
+<button class="answer" data-q="q14" data-value="Useless">Not useful</button>
+</div>
+
+<div class="question">
+<h3>1️⃣5️⃣ What is the strongest firewall in an organization?</h3>
+<button class="answer" data-q="q15" data-value="Hardware">Hardware</button>
+<button class="answer" data-q="q15" data-value="AV">Antivirus</button>
+<button class="answer" data-q="q15" data-value="Employees">Smart aware employees</button>
+<button class="answer" data-q="q15" data-value="Server">Server room</button>
+</div>
+
+<button class="nav-btn" id="prevBtn">Previous</button>
+<button class="nav-btn" id="nextBtn">Next</button>
+<button class="nav-btn" id="submitBtn" style="display:none;">Submit Quiz</button>
+
+<p id="msg"></p>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+getFirestore,collection,addDoc,
+query,where,getDocs
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDrMLVlwHDtBGIzhX428oP-n6jbjmQD5oU",
+  authDomain: "cybersecurityquiz-77964.firebaseapp.com",
+  projectId: "cybersecurityquiz-77964",
+  storageBucket: "cybersecurityquiz-77964.firebasestorage.app",
+  messagingSenderId: "681447202824",
+  appId: "1:681447202824:web:89c7fe779646bd7cb4f1bd"
+};
+
+const app=initializeApp(firebaseConfig);
+const db=getFirestore(app);
+
+let answers={};
+let current=0;
+const questions=document.querySelectorAll(".question");
+
+function showQuestion(i){
+ questions.forEach(q=>q.classList.remove("active"));
+ questions[i].classList.add("active");
+
+ document.getElementById("progress").innerText=
+ `Question ${i+1} / 15`;
+
+ document.getElementById("prevBtn").style.display=
+ i===0?"none":"inline-block";
+
+ document.getElementById("nextBtn").style.display=
+ i===14?"none":"inline-block";
+
+ document.getElementById("submitBtn").style.display=
+ i===14?"inline-block":"none";
+}
+
+showQuestion(0);
+
+document.getElementById("nextBtn").onclick=()=>{
+ if(current<14){current++;showQuestion(current);}
+};
+
+document.getElementById("prevBtn").onclick=()=>{
+ if(current>0){current--;showQuestion(current);}
+};
+
+document.querySelectorAll(".answer").forEach(btn=>{
+ btn.onclick=()=>{
+   const q=btn.dataset.q;
+   answers[q]=btn.dataset.value;
+
+   document.querySelectorAll(`[data-q="${q}"]`)
+   .forEach(b=>b.classList.remove("selected"));
+
+   btn.classList.add("selected");
+ };
+});
+
+document.getElementById("submitBtn").onclick=async()=>{
+  
+
+ const name=document.getElementById("name").value.trim();
+ const des=document.getElementById("designation").value.trim();
+
+ if(!name || !des){
+   document.getElementById("msg").innerText="Enter Name & Designation";
+   return;
+ }
+
+ const q=query(collection(db,"responses"),where("name","==",name));
+ const existing=await getDocs(q);
+
+ if(!existing.empty){
+   document.getElementById("msg").innerText="⚠ Already submitted!";
+   return;
+ }
+
+ let data={name,designation:des,time:new Date().toISOString()};
+
+ for(let i=1;i<=15;i++){
+   data["q"+i]=answers["q"+i]||"";
+ }
+
+ await addDoc(collection(db,"responses"),data);
+
+ document.getElementById("msg").innerText="✅ Submitted!";
+};
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Live Results Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+.leaderboard{
+  background:#334155;
+  padding:10px;
+  border-radius:8px;
+  margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📊 Live Cybersecurity Results</h1>
+
+<h2 id="participants">Participants: 0</h2>
+<h3 id="highScore">10+ Score: 0</h3>
+<h3 id="lowScore">Below 10: 0</h3>
+
+<hr>
+
+<h2>🏆 Top 5 Leaderboard</h2>
+<div id="leaderboard" class="leaderboard"></div>
+
+<hr>
+
+<h2>📊 Score Distribution</h2>
+<canvas id="scoreChart"></canvas>
+
+<hr>
+
+<h2>👥 All Participants</h2>
+<div id="resultsList"></div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, onSnapshot }
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+/* FIREBASE CONFIG */
+const firebaseConfig = {
+  apiKey: "AIzaSyDrMLVlwHDtBGIzhX428oP-n6jbjmQD5oU",
+  authDomain: "cybersecurityquiz-77964.firebaseapp.com",
+  projectId: "cybersecurityquiz-77964",
+  storageBucket: "cybersecurityquiz-77964.firebasestorage.app",
+  messagingSenderId: "681447202824",
+  appId: "1:681447202824:web:89c7fe779646bd7cb4f1bd"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+/* CORRECT ANSWERS */
+const correct = {
+ q1:"Spear phishing",
+ q2:"Low / Minimal",
+ q3:"Reputational damage",
+ q4:"Everyone",
+ q5:"Employee",
+ q6:"Verify",
+ q7:"Call",
+ q8:"Patch",
+ q9:"Car",
+ q10:"Risk",
+ q11:"Risky",
+ q12:"IT",
+ q13:"All",
+ q14:"Layer",
+ q15:"Employees"
+};
+
+/* CHART SETUP */
+const ctx = document.getElementById("scoreChart");
+
+const chart = new Chart(ctx, {
+ type: "bar",
+ data: {
+   labels:["10+ Score","Below 10"],
+   datasets:[{
+     label:"Participants",
+     data:[0,0]
+   }]
+ },
+ options:{
+   animation:true,
+   responsive:true
+ }
+});
+
+/* LIVE DATA */
+onSnapshot(collection(db,"responses"), snap => {
+
+  document.getElementById("participants").innerText =
+    "Participants: " + snap.size;
+
+  const list = document.getElementById("resultsList");
+  const board = document.getElementById("leaderboard");
+
+  list.innerHTML="";
+  board.innerHTML="";
+
+  let high=0;
+  let low=0;
+
+  let ranking=[];
+
+  snap.forEach(doc=>{
+
+    const d = doc.data();
+    let score=0;
+
+    for(let i=1;i<=15;i++){
+      if(d["q"+i]===correct["q"+i]){
+        score++;
+      }
+    }
+
+    if(score>=10) high++;
+    else low++;
+
+    ranking.push({
+      name:d.name,
+      designation:d.designation,
+      score:score
+    });
+
+    list.innerHTML += `
+      <p>👤 <b>${d.name}</b> | ${d.designation} | 🎯 ${score}/15</p>
+    `;
+  });
+
+  /* SORT LEADERBOARD */
+  ranking.sort((a,b)=>b.score-a.score);
+
+  ranking.slice(0,5).forEach((r,i)=>{
+    board.innerHTML += `
+      <p>🥇 #${i+1} <b>${r.name}</b> (${r.designation}) — ${r.score}/15</p>
+    `;
+  });
+
+  /* UPDATE COUNTS */
+  document.getElementById("highScore").innerText =
+    "10+ Score: " + high;
+
+  document.getElementById("lowScore").innerText =
+    "Below 10: " + low;
+
+  /* UPDATE CHART LIVE */
+  chart.data.datasets[0].data = [high,low];
+  chart.update();
+
+});
+
+</script>
+<script>
+const pass = prompt("Admin Password");
+
+if(pass !== "CyberAdmin2026"){
+   alert("Access denied");
+   window.location.href="quiz.html";
+}
+</script>
+
+</body>
+</html>
