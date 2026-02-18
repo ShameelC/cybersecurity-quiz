@@ -234,6 +234,10 @@ function showQuestion(i){
  document.getElementById("nextBtn").style.display=
  i===14?"none":"inline-block";
 
+ document.getElementById("progressBar").style.width =
+  ((i+1)/15*100) + "%";
+
+
  document.getElementById("submitBtn").style.display=
  i===14?"inline-block":"none";
 }
@@ -294,5 +298,6 @@ document.getElementById("submitBtn").onclick=async()=>{
 
 </body>
 </html>
+
 
 
