@@ -41,16 +41,38 @@
 <body>
 
 <div class="container">
+<div class="container">
 
-<h1>Cybersecurity Awareness Quiz</h1>
+  <div class="header">
+    <h1>Cybersecurity Awareness Quiz</h1>
+    <div class="subtitle">Think Before You Click</div>
+  </div>
 
-<input id="name" placeholder="Enter Name">
-<input id="designation" placeholder="Enter Designation">
+  <div class="card">
 
-<div id="progress">Question 1 / 15</div>
+    <input id="name" placeholder="Enter Name">
+    <input id="designation" placeholder="Enter Designation">
 
-<div class="progress-wrap">
-  <div class="progress-bar" id="progressBar"></div>
+    <div class="progress-label">
+      Question <span id="progressText">1</span> / 15
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Questions here -->
+
+    <div class="nav-area">
+      <button class="nav-btn secondary-btn" id="prevBtn">Previous</button>
+      <button class="nav-btn" id="nextBtn">Next</button>
+      <button class="nav-btn" id="submitBtn" style="display:none;">Submit Quiz</button>
+    </div>
+
+    <div id="msg"></div>
+
+  </div>
+
 </div>
 
 
@@ -297,6 +319,7 @@ document.getElementById("submitBtn").onclick=async()=>{
 
 </body>
 </html>
+
 
 
 
