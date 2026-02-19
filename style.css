@@ -72,5 +72,18 @@ input{
   font-weight:bold;
 }
 
+@media(max-width:480px){
+
+  .container{
+    padding:0;
+  }
+
+  .card{
+    min-height:100vh;   /* 👈 full phone height */
+    border-radius:0;    /* 👈 edge-to-edge premium look */
+  }
+
+}
+
 
 
