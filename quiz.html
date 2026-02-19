@@ -231,8 +231,7 @@ function showQuestion(i){
  questions.forEach(q=>q.classList.remove("active"));
  questions[i].classList.add("active");
 
- document.getElementById("progress").innerText=
- `Question ${i+1} / 15`;
+  document.getElementById("progressText").innerText = i + 1;
 
  document.getElementById("prevBtn").style.display=
  i===0?"none":"inline-block";
@@ -304,6 +303,7 @@ document.getElementById("submitBtn").onclick=async()=>{
 
 </body>
 </html>
+
 
 
 
