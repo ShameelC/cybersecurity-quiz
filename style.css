@@ -1,7 +1,3 @@
-/* ===============================
-   🌙 PREMIUM CYBER QUIZ UI
-   =============================== */
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -9,29 +5,18 @@
 }
 
 body{
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family:'Segoe UI', Arial, sans-serif;
   background:linear-gradient(135deg,#0f172a,#0b1220);
   color:#e2e8f0;
   min-height:100vh;
 }
 
-/* ===============================
-   MAIN WRAPPER
-   =============================== */
-
 .container{
   width:100%;
   max-width:720px;
-  min-height:100vh;
   margin:auto;
   padding:25px 20px 40px;
-  display:flex;
-  flex-direction:column;
 }
-
-/* ===============================
-   HEADER
-   =============================== */
 
 .header{
   text-align:center;
@@ -40,33 +25,20 @@ body{
 
 .header h1{
   font-size:24px;
-  font-weight:600;
-  color:#ffffff;
+  color:#fff;
 }
 
 .subtitle{
   font-size:14px;
   color:#94a3b8;
-  margin-top:4px;
 }
-
-/* ===============================
-   CARD
-   =============================== */
 
 .card{
   background:#1e293b;
   border-radius:18px;
   padding:20px;
   box-shadow:0 15px 40px rgba(0,0,0,0.45);
-  flex-grow:1;
-  display:flex;
-  flex-direction:column;
 }
-
-/* ===============================
-   INPUTS
-   =============================== */
 
 input{
   width:100%;
@@ -79,19 +51,9 @@ input{
   color:white;
 }
 
-input:focus{
-  outline:none;
-  background:#3f4f65;
-}
-
-/* ===============================
-   PROGRESS SECTION
-   =============================== */
-
 .progress-label{
   font-size:13px;
   margin-bottom:6px;
-  color:#cbd5e1;
 }
 
 .progress-wrap{
@@ -109,35 +71,6 @@ input:focus{
   background:linear-gradient(90deg,#22c55e,#16a34a);
   transition:width .3s ease;
 }
-
-/* ===============================
-   QUESTION
-   =============================== */
-
-.question{
-  display:none;
-  animation:fadeSlide .35s ease;
-}
-
-.question.active{
-  display:block;
-}
-
-.question h3{
-  font-size:17px;
-  font-weight:500;
-  margin-bottom:14px;
-  line-height:1.5;
-}
-
-@keyframes fadeSlide{
-  from{opacity:0;transform:translateX(12px);}
-  to{opacity:1;transform:translateX(0);}
-}
-
-/* ===============================
-   ANSWER BUTTONS
-   =============================== */
 
 .answer{
   width:100%;
@@ -159,21 +92,16 @@ input:focus{
 
 .answer.selected{
   background:linear-gradient(90deg,#22c55e,#16a34a);
-  color:white;
 }
 
-/* ===============================
-   NAVIGATION AREA
-   =============================== */
-
 .nav-area{
-  margin-top:auto;
-  padding-top:15px;
+  margin-top:20px;
 }
 
 .nav-btn{
   width:100%;
   padding:15px;
+  margin-bottom:10px;
   font-size:16px;
   font-weight:600;
   border:none;
@@ -181,26 +109,11 @@ input:focus{
   background:linear-gradient(90deg,#22c55e,#16a34a);
   color:white;
   cursor:pointer;
-  transition:.2s;
-}
-
-.nav-btn:disabled{
-  opacity:0.6;
-  cursor:not-allowed;
-}
-
-.nav-btn:hover{
-  transform:translateY(-2px);
 }
 
 .secondary-btn{
-  margin-bottom:10px;
   background:#334155;
 }
-
-/* ===============================
-   MESSAGE
-   =============================== */
 
 #msg{
   text-align:center;
@@ -208,26 +121,7 @@ input:focus{
   font-weight:500;
 }
 
-/* ===============================
-   MOBILE OPTIMIZATION
-   =============================== */
-
 @media(max-width:480px){
-
-  .container{
-    padding:18px 14px 35px;
-  }
-
-  .header h1{
-    font-size:20px;
-  }
-
-  .question h3{
-    font-size:16px;
-  }
-
-  .answer{
-    font-size:14px;
-  }
-
+  .header h1{font-size:20px;}
+  .answer{font-size:14px;}
 }
