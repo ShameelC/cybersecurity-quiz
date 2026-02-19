@@ -43,7 +43,8 @@ input{
 
 .nav-btn{
   margin-top:15px;
-  padding:10px 15px;
+  width:100%;
+  padding:12px 17px;
   border:none;
   background:#22c55e;
   color:white;
@@ -52,6 +53,7 @@ input{
 }
 
 #msg{
-  margin-top:10px;
+  margin-top:12px;
   font-weight:bold;
 }
+
